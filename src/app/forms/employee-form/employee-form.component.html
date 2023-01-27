@@ -1,0 +1,67 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #employeeForm="ngForm">
+      <div class="form-group">
+        <label for="fName">First Name</label>
+        <input type="text" [(ngModel)]="employee.firstName"
+          class="form-control"
+               id="fName"
+               name="fName"
+               placeholder="Enter your first name"
+               required #fName="ngModel">
+        >
+      </div>
+      <div [hidden]="!fName.pristine" class="alert alert-danger">First name is required</div>
+
+      <div class="form-group">
+        <label for="lName">Last Name</label>
+        <input type="text" [(ngModel)]="employee.lastName"
+               class="form-control"
+               id="lName"
+               name="lName"
+               placeholder="Enter your last name"
+               required #lName="ngModel">
+        >
+      </div>
+      <div [hidden]="!lName.pristine" class="alert alert-danger">Last name is required</div>
+
+      <div class="form-group">
+        <label for="salary">Salary</label>
+        <input type="number" [(ngModel)]="employee.baseSalary"
+          class="form-control"
+               id="salary"
+               name="salary"
+               placeholder="Salary"
+               required #salary="ngModel">
+      </div>
+      <div [hidden]="!salary.pristine" class="alert alert-danger">Salary is required</div>
+
+      <div class="form-group">
+        <label for="devFunction">Developer Functions</label>
+        <select class="form-select" id="devFunction" [(ngModel)]="employee.developerFunction" #func="ngModel">
+          <option selected>Select the developer function</option>
+          <option value="FULLSTACK_SOFTWARE_ENGINEER">Fullstack developer</option>
+          <option value="DEVOPS">DevOps</option>
+          <option value="QA_TESTER">QA</option>
+          <option value="UX_DESIGNER">UI/UX Designer</option>
+        </select>
+      </div>
+      <div [hidden]="!func.pristine" class="alert alert-danger">A function is required</div>
+
+      <div class="form-group">
+        <label for="admFunction">Administrative function</label>
+        <select class="form-select" id="admFunction" [(ngModel)]="employee.admFunction">
+          <option value=null selected>No function</option>
+          <option value="TEAM_LEADER"></option>
+          <option value="TECHNICAL_PROJECT_MANAGER"></option>
+          <option value="PRODUCT_OWNER"></option>
+          <option value="DEPUTY_CEO"></option>
+          <option value="CEO"></option>
+        </select>
+      </div>
+
+      <button type="submit" [disabled]="!employeeForm.form.valid" class="btn btn-info">Submit</button>
+
+    </form>
+  </div>
+</div>
