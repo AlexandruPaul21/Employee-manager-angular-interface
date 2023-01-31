@@ -8,7 +8,7 @@ import { Observable } from "rxjs";
 })
 export class TeamServiceService {
 
-  private teamsUrl : string;
+  private readonly teamsUrl : string;
 
   constructor(private http : HttpClient) {
     this.teamsUrl = "http://localhost:8080/teams"
@@ -16,6 +16,10 @@ export class TeamServiceService {
 
   public findAll() : Observable<Team[]> {
     return this.http.get<Team[]>(this.teamsUrl);
+  }
+
+  public findById(id : string) {
+    return this.http.get<Team>(this.teamsUrl + "/" + id);
   }
 
   public save(team : Team) {

@@ -7,10 +7,12 @@ import { EmployeeListComponent } from './lists/employee-list/employee-list.compo
 import { TeamListComponent } from './lists/team-list/team-list.component';
 import { EmployeeFormComponent } from './forms/employee-form/employee-form.component';
 import { TeamFormComponent } from './forms/team-form/team-form.component';
-import {FormsModule} from "@angular/forms";
+import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
-import {EmployeeServiceService} from "./service/employee-service.service";
-import {HttpClientModule} from "@angular/common/http";
+import { EmployeeServiceService } from "./service/employee-service.service";
+import { HttpClientModule } from "@angular/common/http";
+import { TeamServiceService } from "./service/team-service.service";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -25,9 +27,10 @@ import {HttpClientModule} from "@angular/common/http";
     RouterLink,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
-  providers: [EmployeeServiceService],
+  providers: [EmployeeServiceService, TeamServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

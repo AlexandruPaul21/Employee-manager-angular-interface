@@ -1,1 +1,19 @@
-<p>team-list works!</p>
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let team of teams; let ndx = index">
+        <td>{{ ndx + 1 }}</td>
+        <td>{{ team.name }}</td>
+      </tr>
+      </tbody>
+    </table>
+    <button routerLink="/addTeam" class="btn btn-primary float-right"><fa-icon [icon]="faEdit"></fa-icon> New Team</button>
+  </div>
+</div>

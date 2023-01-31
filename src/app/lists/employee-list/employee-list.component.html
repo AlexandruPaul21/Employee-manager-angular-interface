@@ -11,8 +11,8 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let employee of employees">
-        <td>{{ employee.id }}</td>
+      <tr *ngFor="let employee of employees; let ndx = index">
+        <td>{{ ndx + 1 }}</td>
         <td>{{ employee.firstName + " " + employee.lastName }}</td>
         <td>{{ employee.developerFunction }}</td>
         <td>{{ employee.team.name }}</td>
@@ -20,5 +20,6 @@
       </tr>
       </tbody>
     </table>
+    <button routerLink="/addEmployee" class="btn btn-primary float-right"><fa-icon [icon]="faEdit"></fa-icon> New Employee</button>
   </div>
 </div>

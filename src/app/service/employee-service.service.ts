@@ -8,7 +8,7 @@ import {Employee} from "../model/Employee";
 })
 export class EmployeeServiceService {
 
-  private urlEmp : string;
+  private readonly urlEmp : string;
 
   constructor(private http : HttpClient) {
     this.urlEmp = "http://localhost:8080/employees";

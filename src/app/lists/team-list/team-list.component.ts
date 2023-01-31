@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Team} from "../../model/Team";
-import {TeamServiceService} from "../../service/team-service.service";
+import { Team } from "../../model/Team";
+import { TeamServiceService } from "../../service/team-service.service";
+import { faPenSquare } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-team-list',
@@ -10,6 +11,7 @@ import {TeamServiceService} from "../../service/team-service.service";
 export class TeamListComponent implements OnInit{
 
   teams : Team[] | undefined;
+  faEdit = faPenSquare;
 
   constructor(private teamService : TeamServiceService) {
   }

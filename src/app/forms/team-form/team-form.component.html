@@ -1,1 +1,18 @@
-<p>team-form works!</p>
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #teamForm="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="team.name" [ngModelOptions]="{standalone : true}"
+               class="form-control"
+               id="name"
+               name="name"
+               placeholder="Enter team name"
+               required #name="ngModel">
+      </div>
+      <div [hidden]="!name.pristine" class="alert alert-danger">You have to enter a name</div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="!teamForm.form.valid">Submit</button>
+    </form>
+  </div>
+</div>
