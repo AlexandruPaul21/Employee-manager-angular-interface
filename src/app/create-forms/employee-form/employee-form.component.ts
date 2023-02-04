@@ -24,9 +24,12 @@ export class EmployeeFormComponent implements OnInit{
     this.employee = new Employee();
   }
 
-  onSubmit() {
+  async onSubmit() {
+    const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
     console.log(this.employee);
+    await sleep(2000);
     this.employeeService.save(this.employee).subscribe();
+    return this.router.navigateByUrl("/employees");
   }
 
   onSelectedDev(fct : string): void {

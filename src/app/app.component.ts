@@ -7,9 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title : string;
+  today : Date;
 
   constructor() {
     this.title = "Employee manager";
+    this.today = new Date();
   }
 
 

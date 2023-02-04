@@ -25,4 +25,12 @@ export class TeamServiceService {
   public save(team : Team) {
     return this.http.post<Team>(this.teamsUrl, team);
   }
+
+  public update(team : Team) {
+    return this.http.put<Team>(this.teamsUrl, team);
+  }
+
+  public delete(id : string) {
+    return this.http.delete<Team>(this.teamsUrl + "/" + id);
+  }
 }

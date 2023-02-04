@@ -1,0 +1,24 @@
+<div class="card my-5">
+  <div class="card-body">
+    <div class="alert alert-danger">
+      You are about to delete this team!
+    </div>
+    <form (ngSubmit)="onSubmit()" #teamForm="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input disabled="true" type="text" [(ngModel)]="team.name" [ngModelOptions]="{standalone : true}"
+               class="form-control"
+               id="name"
+               name="name"
+               placeholder="Enter team name"
+               required #name="ngModel">
+      </div>
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+        Name is required
+      </div>
+
+      <button routerLink="/teams" class="btn btn-primary">Abort</button>
+      <button type="submit" class="btn btn-danger mx-2" [disabled]="name.invalid">Delete</button>
+    </form>
+  </div>
+</div>

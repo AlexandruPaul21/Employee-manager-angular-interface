@@ -21,4 +21,16 @@ export class EmployeeServiceService {
   public save(employee : Employee) {
     return this.http.post<Employee>(this.urlEmp, employee);
   }
+
+  public update(employee : Employee) {
+    return this.http.put<Employee>(this.urlEmp, employee);
+  }
+
+  public findById(id : string) {
+    return this.http.get<Employee>(this.urlEmp + "/" + id);
+  }
+
+  public delete(id : string) {
+    return this.http.delete<Employee>(this.urlEmp + "/" + id);
+  }
 }

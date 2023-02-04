@@ -3,14 +3,19 @@
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
+        <th class="" scope="col">#</th>
+        <th class="" scope="col">Name</th>
+        <th class="" scope="col">Actions</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let team of teams; let ndx = index">
-        <td>{{ ndx + 1 }}</td>
+        <th scope="row">{{ ndx + 1 }}</th>
         <td>{{ team.name }}</td>
+        <td>
+          <button [routerLink]="['/editTeam', team.id]" class="btn btn-primary">Edit</button>
+          <button [routerLink]="['/deleteTeam', team.id]" class="btn btn-danger mx-2">Delete</button>
+        </td>
       </tr>
       </tbody>
     </table>

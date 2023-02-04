@@ -8,6 +8,7 @@
         <th scope="col">Function</th>
         <th scope="col">Team</th>
         <th scope="col">Salary</th>
+        <th scope="col">Actions</th>
       </tr>
       </thead>
       <tbody>
@@ -17,6 +18,10 @@
         <td>{{ employee.developerFunction }}</td>
         <td>{{ employee.team.name }}</td>
         <td>{{ employee.baseSalary }}</td>
+        <td>
+          <button [routerLink]="['/editEmployee', employee.id]" class="btn btn-primary">Edit</button>
+          <button [routerLink]="['/deleteEmployee', employee.id]" class="btn btn-danger mx-2">Delete</button>
+        </td>
       </tr>
       </tbody>
     </table>
